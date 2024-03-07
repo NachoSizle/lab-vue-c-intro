@@ -1,0 +1,16 @@
+:root {
+  --vt-c-grey-darkest: #2B2F30;
+  --vt-c-grey-darker: #34495E;
+  --vt-c-green: #39B983;
+  --vt-c-red: #E54D42;
+  --vt-c-white: #ffffff;
+  --vt-c-indigo: #2c3e50;
+
+  --color-background: var(--vt-c-white);
+  --color-text: var(--vt-c-indigo);
+  --color-h1: var(--vt-c-grey-darkest);
+  --bgcolor-button: var(--vt-c-grey-darker);
+
+  --color-button: var(--vt-c-white);
+  --color-button-danger: var(--vt-c-red);
+}

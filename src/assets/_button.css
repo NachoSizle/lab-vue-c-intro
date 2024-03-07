@@ -1,0 +1,31 @@
+:root {
+  --width-button: 121px;
+  --height-button: 31px;
+  --border-radius-button: 13px;
+  --font-size-button: 14px;
+  --font-weight-button: 800;
+  --line-height-button: 20px;
+  --letter-spacing-button: -2%;
+  --font-family-button: 'Inter', sans-serif;
+}
+
+button {
+  background-color: var(--bgcolor-button);
+  color: var(--color-button);
+  width: var(--width-button);
+  height: var(--height-button);
+  border-radius: var(--border-radius-button);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
+  letter-spacing: var(--letter-spacing-button);
+  font-family: var(--font-family-button);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+button.danger {
+  background-color: var(--color-button-danger);
+}
