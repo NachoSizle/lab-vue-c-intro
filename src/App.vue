@@ -1,6 +1,10 @@
-<template>
-  <button>Click</button>
-</template>
+<script setup>
+import IronNavbar from '@/components/IronNavbar.vue'
+import HeaderBootstrap from '@/components/HeaderBootstrap.vue'
+</script>
 
-<style scoped>
-</style>
+<template>
+  <HeaderBootstrap />
+  <IronNavbar />
+  <RouterView />
+</template>

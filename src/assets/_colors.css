@@ -2,6 +2,7 @@
   --vt-c-grey-darkest: #2B2F30;
   --vt-c-grey-darker: #34495E;
   --vt-c-green: #39B983;
+  --vt-c-yellow: #F4D03F;
   --vt-c-red: #E54D42;
   --vt-c-white: #ffffff;
   --vt-c-indigo: #2c3e50;
@@ -13,4 +14,5 @@
 
   --color-button: var(--vt-c-white);
   --color-button-danger: var(--vt-c-red);
+  --color-button-warning: var(--vt-c-yellow);
 }
