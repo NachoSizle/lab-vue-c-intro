@@ -1,12 +1,54 @@
-<template>
-  <h1>Home View!</h1>
+<script setup>
+import { useTasksStore } from '@/stores/tasksStore';
+import { storeToRefs } from 'pinia';
+import { onMounted, ref } from 'vue';
 
-  <div class="card" style="width: 18rem;">
-    <img src="@/assets/images/ironman.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+const tasksStore = useTasksStore();
+const { tasks, notCompletedTasks } = storeToRefs(tasksStore);
+
+const taskTitle = ref('');
+
+const _addTask = async () => {
+  const task = {
+    user_id: '5e88bcfc-fc98-4204-bd2f-3f6f14f35ecc',
+    title: taskTitle.value,
+    is_complete: false,
+  }
+
+  await tasksStore.createNewTask(task);
+  tasksStore.fetchTasks();
+  taskTitle.value = '';
+};
+
+onMounted(() => {
+  tasksStore.fetchTasks();
+})
+</script>
+
+<template>
+  <section>
+    <span>Tasks: {{ tasks.length }}</span>
+    <span>Not completed: {{ notCompletedTasks.length }}</span>
+    <br />
+    <ul>
+      <li v-for="task in tasks" :key="task.id">
+        {{ task.title }}
+      </li>
+    </ul>
+    <div>
+      <label>
+        Task title:
+        <input type="text" v-model="taskTitle" />
+      </label>
+      <button @click="_addTask">Add task</button>
     </div>
-  </div>
+  </section>
 </template>
+
+<style scoped>
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+</style>

@@ -1,12 +1,39 @@
+<script setup>
+const routes = [
+  {
+    path: '/',
+    title: 'Home',
+  },
+  {
+    path: '/about',
+    title: 'About',
+  },
+  {
+    path: '/contact',
+    title: 'Contact',
+  },
+  {
+    path: '/pokemon/:name',
+    title: 'Mew',
+  },
+  {
+    path: '/pokemon/lugia',
+    title: 'Lugia',
+  },
+  {
+    path: '/pokemon/pikachu',
+    title: 'Pikachu',
+  },
+  {
+    path: '/pokemon/charizard',
+    title: 'Charizard',
+  }
+];
+</script>
+
 <template>
   <div>
-    <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
-    <RouterLink to="/contact">Go to Contact</RouterLink>
-    <RouterLink to="/pokemon/mew">Go to Mew</RouterLink>
-    <RouterLink to="/pokemon/lugia">Go to Lugia</RouterLink>
-    <RouterLink to="/pokemon/pikachu">Go to Pikachu</RouterLink>
-    <RouterLink to="/pokemon/charizard">Go to Charizard</RouterLink>
+    <RouterLink v-for="route in routes" :key="route.path" :to="route.path">Go to {{ route.title }}</RouterLink>
   </div>
 </template>
 
